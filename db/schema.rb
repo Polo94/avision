@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_123638) do
+ActiveRecord::Schema.define(version: 2018_09_20_051351) do
+
+  create_table "realestates", force: :cascade do |t|
+    t.string "client_name"
+    t.string "client_nickname"
+    t.string "action"
+    t.string "property_type"
+    t.string "location"
+    t.string "telephone_number"
+    t.string "client_email"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_realestates_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
